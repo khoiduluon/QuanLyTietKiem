@@ -24,7 +24,7 @@ public class DangNhap extends javax.swing.JFrame {
         txtPassWord.setBackground(new Color(0, 0, 0, 0));
         jPanel1.setBackground(new Color(0, 0, 0, 0));
         txtUserName.requestFocus();
-        System.out.println("test3");
+        System.out.println("test1");
         
     }
 
