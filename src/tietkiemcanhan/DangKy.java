@@ -94,8 +94,6 @@ public class DangKy extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
-
-        txtPassWord.setText("jPasswordField1");
         jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 240, 30));
 
         txtFullName.setBorder(null);
