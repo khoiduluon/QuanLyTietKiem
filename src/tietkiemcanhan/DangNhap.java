@@ -125,7 +125,10 @@ public class DangNhap extends javax.swing.JFrame {
 
     private void lblDangKyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangKyMouseClicked
         if(txtUserName.getText().equalsIgnoreCase("abc") && txtPassWord.getText().equalsIgnoreCase("123")){
-            JOptionPane.showMessageDialog(this, "Đăng nhập thành công");           
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công");
+            QLMT ql= new QLMT();
+            ql.setVisible(true);
+            dispose();;
         }else{
             checkDangnhap();
         }
