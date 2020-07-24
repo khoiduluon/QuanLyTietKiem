@@ -21,6 +21,7 @@ public class QLMT extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         cardLayout = (CardLayout) Cards.getLayout();
+        System.out.println("cc");
     }
 
     /**
