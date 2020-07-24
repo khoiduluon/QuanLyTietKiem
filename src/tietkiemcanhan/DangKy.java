@@ -6,6 +6,7 @@
 package tietkiemcanhan;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -76,7 +77,7 @@ public class DangKy extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
         jLabel7.setText("FullName:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 3.png"))); // NOI18N
         lblDangKy.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,6 +124,7 @@ public class DangKy extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, 20));
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 240, 10));
 
+        buttonGroup1.add(rdoFemale);
         rdoFemale.setText("Female");
         jPanel1.add(rdoFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
 
@@ -131,6 +133,7 @@ public class DangKy extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 240, 10));
 
+        buttonGroup1.add(rdoMale);
         rdoMale.setText("Male");
         jPanel1.add(rdoMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
@@ -167,10 +170,12 @@ public class DangKy extends javax.swing.JFrame {
 
     private void lblDangKyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangKyMouseClicked
         // TODO add your handling code here:
+        KT();
     }//GEN-LAST:event_lblDangKyMouseClicked
 
     private void lblCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelMouseClicked
-       System.exit(0);
+       KT();
+        System.exit(0);
     }//GEN-LAST:event_lblCancelMouseClicked
 
     /**
@@ -237,4 +242,51 @@ public class DangKy extends javax.swing.JFrame {
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+    boolean  KT(){
+        if(txtUserName.equals("")){
+            JOptionPane.showMessageDialog(this,"Username không được để trống!");
+            txtUserName.requestFocus();
+            return false; 
+        }
+        if(txtPassWord.equals("")){
+            JOptionPane.showMessageDialog(this,"Password không được để trống!");
+            txtPassWord.requestFocus();
+            return false; 
+        }
+        if(txtConfirm.equals("")){
+            JOptionPane.showMessageDialog(this,"Confim Password không được để trống!");
+            txtConfirm.requestFocus();
+            return false; 
+        }
+        if(txtFullName.equals("")){
+            JOptionPane.showMessageDialog(this,"Fullname không được để trống!");
+            txtFullName.requestFocus();
+            return false; 
+        }
+        if(rdoFemale.isSelected()){
+        }else{
+            if(rdoMale.isSelected()){
+            }else{
+                JOptionPane.showMessageDialog(this,"Bạn chưa chọn giới tính!");
+                return false;
+            }
+        }
+        if(txtEmail.equals("")){
+            JOptionPane.showMessageDialog(this,"Email không được để trống!");
+            txtEmail.requestFocus();
+            return false; 
+        }
+        if(txtPhone.equals("")){
+            JOptionPane.showMessageDialog(this,"Phone number không được để trống!");
+            txtPhone.requestFocus();
+            return false; 
+        }
+        if(txtConfirm.getText().equals(txtPassWord.getText())){
+        }else{
+            JOptionPane.showMessageDialog(this,"Confim Password không khớp vs Password!");
+            txtConfirm.requestFocus();
+            return false;
+        }
+        return true;
+    }  
 }
