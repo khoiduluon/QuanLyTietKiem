@@ -6,6 +6,7 @@
 package tietkiemcanhan;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,8 +55,6 @@ public class DangNhap extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(null);
-        jPanel1.setForeground(null);
         jPanel1.setToolTipText("");
         jPanel1.setEnabled(false);
         jPanel1.setOpaque(false);
@@ -97,6 +96,11 @@ public class DangNhap extends javax.swing.JFrame {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 210, 40));
 
         lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 4.png"))); // NOI18N
+        lblDangKy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDangKyMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 2.png"))); // NOI18N
@@ -118,6 +122,14 @@ public class DangNhap extends javax.swing.JFrame {
        DangKy dk = new DangKy();
        dk.setVisible(true);
     }//GEN-LAST:event_lblPopupMouseClicked
+
+    private void lblDangKyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangKyMouseClicked
+        if(txtUserName.getText().equalsIgnoreCase("abc") && txtPassWord.getText().equalsIgnoreCase("123")){
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công");           
+        }else{
+            checkDangnhap();
+        }
+    }//GEN-LAST:event_lblDangKyMouseClicked
 
     /**
      * @param args the command line arguments
@@ -168,4 +180,22 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassWord;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+    boolean checkDangnhap() {
+        if (txtUserName.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "mời bạn nhập Username", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            txtUserName.requestFocus();
+            return false;
+        }
+        if (txtPassWord.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "mời bạn nhập Password", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            txtPassWord.requestFocus();
+            return false;
+        }
+        if (txtUserName.getText() != txtPassWord.getText()) {
+            JOptionPane.showMessageDialog(this, "Bạn nhâp sai tk/mk, mời nhập lại", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            return false;
+        }
+            return true;
+    }
 }
+
