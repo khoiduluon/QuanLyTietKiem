@@ -45,6 +45,7 @@ public class DangKy extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         lblDangKy = new javax.swing.JLabel();
         lblCancel = new javax.swing.JLabel();
+        txtPassWord = new javax.swing.JPasswordField();
         txtFullName = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
@@ -63,7 +64,6 @@ public class DangKy extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtPassWord = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -94,6 +94,9 @@ public class DangKy extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
+
+        txtPassWord.setText("jPasswordField1");
+        jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 240, 30));
 
         txtFullName.setBorder(null);
         txtFullName.setOpaque(false);
@@ -149,10 +152,6 @@ public class DangKy extends javax.swing.JFrame {
         jLabel10.setText("Gender");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
-        txtPassWord.setBorder(null);
-        txtPassWord.setOpaque(false);
-        jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 240, 30));
-
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
         jLabel9.setText("Phone Number:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
@@ -174,7 +173,7 @@ public class DangKy extends javax.swing.JFrame {
     }//GEN-LAST:event_lblDangKyMouseClicked
 
     private void lblCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelMouseClicked
-       KT();
+
         System.exit(0);
     }//GEN-LAST:event_lblCancelMouseClicked
 
@@ -238,27 +237,27 @@ public class DangKy extends javax.swing.JFrame {
     private javax.swing.JTextField txtConfirm;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFullName;
-    private javax.swing.JTextField txtPassWord;
+    private javax.swing.JPasswordField txtPassWord;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
     boolean  KT(){
-        if(txtUserName.equals("")){
+        if(txtUserName.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Username không được để trống!");
             txtUserName.requestFocus();
             return false; 
         }
-        if(txtPassWord.equals("")){
+        if(txtPassWord.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Password không được để trống!");
             txtPassWord.requestFocus();
             return false; 
         }
-        if(txtConfirm.equals("")){
+        if(txtConfirm.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Confim Password không được để trống!");
             txtConfirm.requestFocus();
             return false; 
         }
-        if(txtFullName.equals("")){
+        if(txtFullName.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Fullname không được để trống!");
             txtFullName.requestFocus();
             return false; 
@@ -271,12 +270,12 @@ public class DangKy extends javax.swing.JFrame {
                 return false;
             }
         }
-        if(txtEmail.equals("")){
+        if(txtEmail.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Email không được để trống!");
             txtEmail.requestFocus();
             return false; 
         }
-        if(txtPhone.equals("")){
+        if(txtPhone.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Phone number không được để trống!");
             txtPhone.requestFocus();
             return false; 
