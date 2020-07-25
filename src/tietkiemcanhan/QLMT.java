@@ -33,28 +33,46 @@ public class QLMT extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        Fix = new javax.swing.JMenuItem();
+        Del = new javax.swing.JMenuItem();
+        Pause = new javax.swing.JMenuItem();
+        Cancel = new javax.swing.JMenuItem();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Cards = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        tblList = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
+        txtTienTk = new javax.swing.JTextField();
+        btnTietKiem = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        Date = new com.toedter.calendar.JDateChooser();
+        lblGiaTri = new javax.swing.JLabel();
+        lblTenMucTieu = new javax.swing.JLabel();
+        lblTienDaTK = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblThemMT = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+
+        Fix.setText("Sửa");
+        jPopupMenu1.add(Fix);
+
+        Del.setText("Delete");
+        jPopupMenu1.add(Del);
+
+        Pause.setText("Pause");
+        jPopupMenu1.add(Pause);
+
+        Cancel.setText("Cancel");
+        jPopupMenu1.add(Cancel);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,124 +93,82 @@ public class QLMT extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Left.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Left.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Cards.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setText("Helo");
+        Card1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("jTextField1");
-
-        jLabel6.setText("jLabel6");
-
-        jTextField2.setText("jTextField2");
-
-        jLabel7.setText("jLabel7");
-
-        jRadioButton1.setText("jRadioButton1");
-
-        jRadioButton2.setText("jRadioButton2");
-
-        jRadioButton3.setText("jRadioButton3");
-
-        jButton1.setText("jButton1");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Tên mục tiêu", "Giá trị", "Thời hạn", "Số tiền đã tiết kiệm được", "Số tiền phải tiêt kiệm hằng ngày"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-        jButton2.setText("jButton2");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblList.setComponentPopupMenu(jPopupMenu1);
+        jScrollPane1.setViewportView(tblList);
 
-        jButton3.setText("jButton3");
+        Card1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 560, 340));
 
-        jButton4.setText("jButton4");
+        jLabel8.setText("Số tiền muốn tiết kiệm:");
+        Card1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        Card1.add(txtTienTk, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 109, -1));
 
-        jButton5.setText("jButton5");
+        btnTietKiem.setText("Tiết kiệm lào");
+        Card1.add(btnTietKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, -1, -1));
 
-        javax.swing.GroupLayout Card1Layout = new javax.swing.GroupLayout(Card1);
-        Card1.setLayout(Card1Layout);
-        Card1Layout.setHorizontalGroup(
-            Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
-                .addGap(0, 49, Short.MAX_VALUE))
-        );
-        Card1Layout.setVerticalGroup(
-            Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Card1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Card1Layout.createSequentialGroup()
-                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Card1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5))
-                        .addGap(215, 215, 215))))
-        );
+        jLabel9.setText("Được tiết kiệm vào mục...");
+        Card1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, -1, -1));
+        Card1.add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 154, -1));
 
-        Cards.add(Card1, "card1");
+        lblGiaTri.setText("5 tỏi");
+        Card1.add(lblGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+
+        lblTenMucTieu.setText("Penhouse trên đà lạt");
+        Card1.add(lblTenMucTieu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 110, 30));
+
+        lblTienDaTK.setText("dm, chưa được đồng nào");
+        Card1.add(lblTienDaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
+
+        jLabel2.setText("Chọn ngày:");
+        Card1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT.png"))); // NOI18N
+        Card1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 170, 209, 123));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 2.png"))); // NOI18N
+        Card1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 1.png"))); // NOI18N
+        Card1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+
+        lblThemMT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/createMT.png"))); // NOI18N
+        lblThemMT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThemMTMouseClicked(evt);
+            }
+        });
+        Card1.add(lblThemMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel11.setText("Chổ này thiết kế sau");
+        Card1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 660, 40));
+
+        Cards.add(Card1, "card3");
 
         jLabel3.setText("Helo");
 
@@ -203,14 +179,14 @@ public class QLMT extends javax.swing.JFrame {
             .addGroup(Card2Layout.createSequentialGroup()
                 .addGap(337, 337, 337)
                 .addComponent(jLabel3)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card2Layout.createSequentialGroup()
-                .addContainerGap(445, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(191, 191, 191))
+                .addGap(656, 656, 656))
         );
 
         Cards.add(Card2, "card2");
@@ -227,6 +203,11 @@ public class QLMT extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         cardLayout.show(Cards, "card2");
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void lblThemMTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemMTMouseClicked
+        ThemMucTieu tmt = new ThemMucTieu();
+        tmt.setVisible(true);
+    }//GEN-LAST:event_lblThemMTMouseClicked
 
     /**
      * @param args the command line arguments
@@ -264,27 +245,33 @@ public class QLMT extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cancel;
     private javax.swing.JPanel Card1;
     private javax.swing.JPanel Card2;
     private javax.swing.JPanel Cards;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private com.toedter.calendar.JDateChooser Date;
+    private javax.swing.JMenuItem Del;
+    private javax.swing.JMenuItem Fix;
+    private javax.swing.JMenuItem Pause;
+    private javax.swing.JButton btnTietKiem;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblGiaTri;
+    private javax.swing.JLabel lblTenMucTieu;
+    private javax.swing.JLabel lblThemMT;
+    private javax.swing.JLabel lblTienDaTK;
+    private javax.swing.JTable tblList;
+    private javax.swing.JTextField txtTienTk;
     // End of variables declaration//GEN-END:variables
 }
