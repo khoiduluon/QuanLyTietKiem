@@ -6,13 +6,27 @@
 package tietkiemcanhan;
 
 import java.awt.CardLayout;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author 0ldbl
  */
 public class QLMT extends javax.swing.JFrame {
-
+    int index=0;
+    String username="sa";
+    String password="";
+    String url="jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true";
     /**
      * Creates new form QLMT
      */
@@ -21,7 +35,7 @@ public class QLMT extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         cardLayout = (CardLayout) Cards.getLayout();
-        System.out.println("cc");
+        DataToTable();
     }
 
     /**
@@ -236,6 +250,10 @@ public class QLMT extends javax.swing.JFrame {
        cardLayout.show(Cards, "card1");
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void tblListMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        index=tblList.getSelectedRow();
+    }
+    
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         cardLayout.show(Cards, "card2");
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -311,4 +329,46 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JTable tblList;
     private javax.swing.JTextField txtTienTk;
     // End of variables declaration//GEN-END:variables
+
+void DataToTable(){
+        try {
+            DefaultTableModel bang= (DefaultTableModel) tblList.getModel();
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true","","");
+            Statement st = con.createStatement();
+            String sql = "select * from muctieutietkiem";//con đĩ ngân
+            ResultSet rs = st.executeQuery(sql);
+            bang.setRowCount(0);
+            if(rs.isBeforeFirst()==false){
+                JOptionPane.showMessageDialog(this,"Chưa có mt");
+            }
+            while (rs.next()) {
+                Vector vt= new Vector();
+                vt.add(rs.getString("tenmuctieu"));
+                vt.add(rs.getString("giatri"));
+                vt.add(rs.getString("thoihan"));
+                bang.addRow(vt);
+            }
+            tblList.setModel(bang);
+            con.close();
+            st.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+}
+void xoaMT(){
+    try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection(url, username, password);
+            String query = "delete from muctieutietkiem where idMT = ?";
+            PreparedStatement st=con.prepareStatement(query);
+            st.setString(1,"");
+            st.execute();
+            tblList.remove(index);
+            JOptionPane.showMessageDialog(this,"Delete thành công");
+            con.close();
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+}
 }
