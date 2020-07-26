@@ -52,8 +52,10 @@ public class QLMT extends javax.swing.JFrame {
         Del = new javax.swing.JMenuItem();
         Pause = new javax.swing.JMenuItem();
         Cancel = new javax.swing.JMenuItem();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblMain = new javax.swing.JLabel();
+        lblLichSu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Cards = new javax.swing.JPanel();
         Card1 = new javax.swing.JPanel();
@@ -66,14 +68,20 @@ public class QLMT extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         lblThemMT = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txtTienTk = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnTietKiem = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        Date = new com.toedter.calendar.JDateChooser();
+        txtTimKiem = new javax.swing.JTextField();
+        lblTienDo = new javax.swing.JLabel();
+        lblTktheongay = new javax.swing.JLabel();
+        lblTimKiem = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -91,22 +99,26 @@ public class QLMT extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, -1));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 170, -1));
 
-        jLabel4.setText("Panel1");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblMain.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblMain.setText("Main");
+        lblMain.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblMainMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        getContentPane().add(lblMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
-        jLabel5.setText("Panel2");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblLichSu.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblLichSu.setText("Lịch Sử");
+        lblLichSu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                lblLichSuMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
+        getContentPane().add(lblLichSu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Left.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 640));
@@ -137,25 +149,25 @@ public class QLMT extends javax.swing.JFrame {
         tblList.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(tblList);
 
-        Card1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 560, 330));
+        Card1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 750, 240));
 
         lblGiaTri.setText("5 tỏi");
-        Card1.add(lblGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
+        Card1.add(lblGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, -1));
 
         lblTenMucTieu.setText("Penhouse trên đà lạt");
-        Card1.add(lblTenMucTieu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 110, 30));
+        Card1.add(lblTenMucTieu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 110, 30));
 
         lblTienDaTK.setText("dm, chưa được đồng nào");
-        Card1.add(lblTienDaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
+        Card1.add(lblTienDaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT.png"))); // NOI18N
-        Card1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 209, 123));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF1.png"))); // NOI18N
+        Card1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 100));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 2.png"))); // NOI18N
-        Card1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 210, 120));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF3.png"))); // NOI18N
+        Card1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 210, 120));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 1.png"))); // NOI18N
-        Card1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 210, 120));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF2.png"))); // NOI18N
+        Card1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 210, 100));
 
         lblThemMT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/createMT.png"))); // NOI18N
         lblThemMT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,19 +175,20 @@ public class QLMT extends javax.swing.JFrame {
                 lblThemMTMouseClicked(evt);
             }
         });
-        Card1.add(lblThemMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 140, 80));
+        Card1.add(lblThemMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 140, 80));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TOp.png"))); // NOI18N
-        Card1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 130));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tiết kiệm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tiết kiệm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
-
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Số tiền muốn tiết kiệm:");
 
-        jLabel9.setText("Được tiết kiệm vào mục...");
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setText("Tiết kiệm vào mục...(gettable, set label)");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Chọn ngày:");
 
+        btnTietKiem.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnTietKiem.setText("Tiết kiệm lào");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -186,37 +199,58 @@ public class QLMT extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(txtTienTk, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(btnTietKiem))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtTienTk)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(btnTietKiem)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel8)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtTienTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(13, 13, 13)
                 .addComponent(jLabel9)
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnTietKiem)
-                .addGap(0, 108, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        Card1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 180, 340));
+        Card1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 250, 260));
+        Card1.add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 130, -1));
+
+        lblTienDo.setText("99%");
+        Card1.add(lblTienDo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
+
+        lblTktheongay.setText("2000");
+        Card1.add(lblTktheongay, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
+
+        lblTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/find_and_replace_32px.png"))); // NOI18N
+        Card1.add(lblTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF4.png"))); // NOI18N
+        Card1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 100));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF5.png"))); // NOI18N
+        Card1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, 100));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF6.png"))); // NOI18N
+        Card1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
         Cards.add(Card1, "card3");
 
@@ -227,16 +261,16 @@ public class QLMT extends javax.swing.JFrame {
         Card2Layout.setHorizontalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card2Layout.createSequentialGroup()
-                .addGap(337, 337, 337)
+                .addGap(330, 330, 330)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(419, Short.MAX_VALUE))
         );
         Card2Layout.setVerticalGroup(
             Card2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Card2Layout.createSequentialGroup()
+                .addGap(239, 239, 239)
                 .addComponent(jLabel3)
-                .addGap(656, 656, 656))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         Cards.add(Card2, "card2");
@@ -246,17 +280,17 @@ public class QLMT extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainMouseClicked
        cardLayout.show(Cards, "card1");
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblMainMouseClicked
 
     private void tblListMouseClicked(java.awt.event.MouseEvent evt) {                                     
         index=tblList.getSelectedRow();
     }
     
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void lblLichSuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLichSuMouseClicked
         cardLayout.show(Cards, "card2");
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_lblLichSuMouseClicked
 
     private void lblThemMTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemMTMouseClicked
         ThemMucTieu tmt = new ThemMucTieu();
@@ -303,18 +337,18 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JPanel Card1;
     private javax.swing.JPanel Card2;
     private javax.swing.JPanel Cards;
+    private com.toedter.calendar.JDateChooser Date;
     private javax.swing.JMenuItem Del;
     private javax.swing.JMenuItem Fix;
     private javax.swing.JMenuItem Pause;
     private javax.swing.JButton btnTietKiem;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -322,12 +356,20 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblGiaTri;
+    private javax.swing.JLabel lblLichSu;
+    private javax.swing.JLabel lblMain;
     private javax.swing.JLabel lblTenMucTieu;
     private javax.swing.JLabel lblThemMT;
     private javax.swing.JLabel lblTienDaTK;
+    private javax.swing.JLabel lblTienDo;
+    private javax.swing.JLabel lblTimKiem;
+    private javax.swing.JLabel lblTktheongay;
     private javax.swing.JTable tblList;
     private javax.swing.JTextField txtTienTk;
+    private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
 
 void DataToTable(){
