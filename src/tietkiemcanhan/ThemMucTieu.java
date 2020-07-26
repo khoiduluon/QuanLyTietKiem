@@ -93,7 +93,7 @@ public class ThemMucTieu extends javax.swing.JFrame {
             dem+=1;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con = DriverManager.getConnection(url, username, password);
-            String query = "insert into studens (tenmuctieu,giatri,thoihan) values(?,?,?,?)";
+            String query = "insert into studens (idMT,tenmuctieu,giatri,thoihan) values(?,?,?,?)";
             PreparedStatement st = con.prepareStatement(query);
             st.setString(1,idMT);
             st.setString(2,txtTenMT.getText());

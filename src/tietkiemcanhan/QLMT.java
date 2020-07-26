@@ -8,6 +8,7 @@ package tietkiemcanhan;
 import java.awt.CardLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,7 +23,10 @@ import javax.swing.table.DefaultTableModel;
  * @author 0ldbl
  */
 public class QLMT extends javax.swing.JFrame {
-
+    int index=0;
+    String username="sa";
+    String password="";
+    String url="jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true";
     /**
      * Creates new form QLMT
      */
@@ -210,6 +214,10 @@ public class QLMT extends javax.swing.JFrame {
        cardLayout.show(Cards, "card1");
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void tblListMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        index=tblList.getSelectedRow();
+    }
+    
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         cardLayout.show(Cards, "card2");
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -308,6 +316,21 @@ void DataToTable(){
             st.close();
             rs.close();
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+}
+void xoaMT(){
+    try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection(url, username, password);
+            String query = "delete from muctieutietkiem where idMT = ?";
+            PreparedStatement st=con.prepareStatement(query);
+            st.setString(1,"");
+            st.execute();
+            tblList.remove(index);
+            JOptionPane.showMessageDialog(this,"Delete thành công");
+            con.close();
+        }catch (Exception ex) {
             JOptionPane.showMessageDialog(this,ex);
         }
 }
