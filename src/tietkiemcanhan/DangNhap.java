@@ -68,7 +68,7 @@ public class DangNhap extends javax.swing.JFrame {
         jLabel6.setText("PassWord:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
 
-        lblCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 5.png"))); // NOI18N
+        lblCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 5.png"))); // NOI18N
         lblCancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCancelMouseClicked(evt);
@@ -95,7 +95,7 @@ public class DangNhap extends javax.swing.JFrame {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 210, 20));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 210, 40));
 
-        lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 4.png"))); // NOI18N
+        lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 4.png"))); // NOI18N
         lblDangKy.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblDangKyMouseClicked(evt);
@@ -103,10 +103,10 @@ public class DangNhap extends javax.swing.JFrame {
         });
         jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 450, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 1.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 460, 600));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 890, 620));

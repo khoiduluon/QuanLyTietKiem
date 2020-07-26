@@ -71,7 +71,7 @@
         <Component class="javax.swing.JLabel" name="lblCancel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/tietkiemcanhan/Artboard &#x2013; 5.png"/>
+              <Image iconType="3" name="/tietkiemcanhan/Button/Artboard &#x2013; 5.png"/>
             </Property>
           </Properties>
           <Events>
@@ -140,7 +140,7 @@
         <Component class="javax.swing.JLabel" name="lblDangKy">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/tietkiemcanhan/Artboard &#x2013; 4.png"/>
+              <Image iconType="3" name="/tietkiemcanhan/Button/Artboard &#x2013; 4.png"/>
             </Property>
           </Properties>
           <Events>
@@ -155,7 +155,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/tietkiemcanhan/Artboard &#x2013; 2.png"/>
+              <Image iconType="3" name="/tietkiemcanhan/Button/Artboard &#x2013; 2.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -167,7 +167,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/tietkiemcanhan/Artboard &#x2013; 1.png"/>
+              <Image iconType="3" name="/tietkiemcanhan/Button/Artboard &#x2013; 1.png"/>
             </Property>
           </Properties>
           <Constraints>

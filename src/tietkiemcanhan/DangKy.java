@@ -79,7 +79,7 @@ public class DangKy extends javax.swing.JFrame {
         jLabel7.setText("FullName:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-        lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 3.png"))); // NOI18N
+        lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 3.png"))); // NOI18N
         lblDangKy.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblDangKyMouseClicked(evt);
@@ -87,13 +87,16 @@ public class DangKy extends javax.swing.JFrame {
         });
         jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
-        lblCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 5.png"))); // NOI18N
+        lblCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 5.png"))); // NOI18N
         lblCancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCancelMouseClicked(evt);
             }
         });
         jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
+
+        txtPassWord.setBorder(null);
+        txtPassWord.setOpaque(false);
         jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 240, 30));
 
         txtFullName.setBorder(null);
@@ -157,7 +160,7 @@ public class DangKy extends javax.swing.JFrame {
         jLabel3.setText("Đăng ký");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 90, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Artboard – 2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 460, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 630));

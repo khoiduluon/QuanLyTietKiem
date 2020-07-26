@@ -45,20 +45,21 @@ public class QLMT extends javax.swing.JFrame {
         Card1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblList = new javax.swing.JTable();
-        jLabel8 = new javax.swing.JLabel();
-        txtTienTk = new javax.swing.JTextField();
-        btnTietKiem = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        Date = new com.toedter.calendar.JDateChooser();
         lblGiaTri = new javax.swing.JLabel();
         lblTenMucTieu = new javax.swing.JLabel();
         lblTienDaTK = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         lblThemMT = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        txtTienTk = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnTietKiem = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         Card2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -94,7 +95,7 @@ public class QLMT extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Left.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 640));
 
         Cards.setLayout(new java.awt.CardLayout());
 
@@ -122,39 +123,25 @@ public class QLMT extends javax.swing.JFrame {
         tblList.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(tblList);
 
-        Card1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 560, 340));
-
-        jLabel8.setText("Số tiền muốn tiết kiệm:");
-        Card1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
-        Card1.add(txtTienTk, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 109, -1));
-
-        btnTietKiem.setText("Tiết kiệm lào");
-        Card1.add(btnTietKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, -1, -1));
-
-        jLabel9.setText("Được tiết kiệm vào mục...");
-        Card1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, -1, -1));
-        Card1.add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 154, -1));
+        Card1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 560, 330));
 
         lblGiaTri.setText("5 tỏi");
-        Card1.add(lblGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+        Card1.add(lblGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
 
         lblTenMucTieu.setText("Penhouse trên đà lạt");
-        Card1.add(lblTenMucTieu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 110, 30));
+        Card1.add(lblTenMucTieu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 110, 30));
 
         lblTienDaTK.setText("dm, chưa được đồng nào");
-        Card1.add(lblTienDaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
-
-        jLabel2.setText("Chọn ngày:");
-        Card1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, -1, -1));
+        Card1.add(lblTienDaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT.png"))); // NOI18N
-        Card1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 170, 209, 123));
+        Card1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 209, 123));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 2.png"))); // NOI18N
-        Card1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
+        Card1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 210, 120));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TMT – 1.png"))); // NOI18N
-        Card1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        Card1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 210, 120));
 
         lblThemMT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/createMT.png"))); // NOI18N
         lblThemMT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -162,11 +149,60 @@ public class QLMT extends javax.swing.JFrame {
                 lblThemMTMouseClicked(evt);
             }
         });
-        Card1.add(lblThemMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, -1, -1));
+        Card1.add(lblThemMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 140, 80));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel11.setText("Chổ này thiết kế sau");
-        Card1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 660, 40));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/TOp.png"))); // NOI18N
+        Card1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 130));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tiết kiệm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
+
+        jLabel8.setText("Số tiền muốn tiết kiệm:");
+
+        jLabel9.setText("Được tiết kiệm vào mục...");
+
+        jLabel2.setText("Chọn ngày:");
+
+        btnTietKiem.setText("Tiết kiệm lào");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(txtTienTk, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(btnTietKiem))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(6, 6, 6)
+                .addComponent(txtTienTk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel9)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnTietKiem)
+                .addGap(0, 108, Short.MAX_VALUE))
+        );
+
+        Card1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 180, 340));
 
         Cards.add(Card1, "card3");
 
@@ -249,14 +285,14 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JPanel Card1;
     private javax.swing.JPanel Card2;
     private javax.swing.JPanel Cards;
-    private com.toedter.calendar.JDateChooser Date;
     private javax.swing.JMenuItem Del;
     private javax.swing.JMenuItem Fix;
     private javax.swing.JMenuItem Pause;
     private javax.swing.JButton btnTietKiem;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -265,6 +301,7 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblGiaTri;
