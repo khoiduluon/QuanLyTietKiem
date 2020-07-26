@@ -5,12 +5,24 @@
  */
 package tietkiemcanhan;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ldbl
  */
 public class ThemMucTieu extends javax.swing.JFrame {
-
+    int dem=1;
+    String idMT="MT"+dem;
+    String username="sa";
+    String password="";
+    String url="jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true";
     /**
      * Creates new form ThemMucTieu
      */
@@ -43,32 +55,63 @@ public class ThemMucTieu extends javax.swing.JFrame {
 
         jLabel1.setText("Tên mục tiêu:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
-        getContentPane().add(txtTenMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 150, -1));
+        getContentPane().add(txtTenMT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 150, -1));
 
         jLabel2.setText("Giá trị:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
-        getContentPane().add(txtGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 150, -1));
+        getContentPane().add(txtGiaTri, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 150, -1));
 
         jLabel3.setText("Thời gian:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         buttonGroup1.add(rdo3thang);
         rdo3thang.setText("3 tháng");
-        getContentPane().add(rdo3thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        getContentPane().add(rdo3thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, 30));
 
         buttonGroup1.add(rdo6thang);
         rdo6thang.setText("6 tháng");
-        getContentPane().add(rdo6thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        getContentPane().add(rdo6thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, 30));
 
         buttonGroup1.add(rdo12thang);
         rdo12thang.setText("12 tháng");
-        getContentPane().add(rdo12thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        getContentPane().add(rdo12thang, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, 30));
 
         btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        try {
+            dem+=1;
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con = DriverManager.getConnection(url, username, password);
+            String query = "insert into studens (tenmuctieu,giatri,thoihan) values(?,?,?,?)";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setString(1,idMT);
+            st.setString(2,txtTenMT.getText());
+            st.setString(3, txtGiaTri.getText());
+            String th="";
+            if(rdo3thang.isSelected()){
+                th=rdo3thang.getText();
+            }else if(rdo6thang.isSelected()){
+                th=rdo6thang.getText();
+            }else{
+                th=rdo12thang.getText();
+            }
+            st.setString(4,th);
+            JOptionPane.showMessageDialog(this,"Thêm mực tiêu thành công");
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    }//GEN-LAST:event_btnThemActionPerformed
 
     /**
      * @param args the command line arguments

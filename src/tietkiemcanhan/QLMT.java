@@ -6,6 +6,16 @@
 package tietkiemcanhan;
 
 import java.awt.CardLayout;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,7 +31,7 @@ public class QLMT extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         cardLayout = (CardLayout) Cards.getLayout();
-        System.out.println("cc");
+        DataToTable();
     }
 
     /**
@@ -274,4 +284,31 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JTable tblList;
     private javax.swing.JTextField txtTienTk;
     // End of variables declaration//GEN-END:variables
+
+void DataToTable(){
+        try {
+            DefaultTableModel bang= (DefaultTableModel) tblList.getModel();
+            Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true","","");
+            Statement st = con.createStatement();
+            String sql = "select * from STUDENTS";
+            ResultSet rs = st.executeQuery(sql);
+            bang.setRowCount(0);
+            if(rs.isBeforeFirst()==false){
+                JOptionPane.showMessageDialog(this,"Chưa có sinh viên");
+            }
+            while (rs.next()) {
+                Vector vt= new Vector();
+                vt.add(rs.getString("tenmuctieu"));
+                vt.add(rs.getString("giatri"));
+                vt.add(rs.getString("thoihan"));
+                bang.addRow(vt);
+            }
+            tblList.setModel(bang);
+            con.close();
+            st.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+}
 }
