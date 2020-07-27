@@ -28,6 +28,7 @@ public class ThemMucTieu extends javax.swing.JFrame {
      */
     public ThemMucTieu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -160,4 +161,15 @@ public class ThemMucTieu extends javax.swing.JFrame {
     private javax.swing.JTextField txtGiaTri;
     private javax.swing.JTextField txtTenMT;
     // End of variables declaration//GEN-END:variables
+int ham(){
+    int ngay;
+    if (rdo3thang.isSelected()) {
+        ngay=90;
+    } else if (rdo6thang.isSelected()) {
+        ngay=180;
+    }else{
+        ngay=360;
+    }
+    return ngay;
+}
 }
