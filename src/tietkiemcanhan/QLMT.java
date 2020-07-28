@@ -82,6 +82,7 @@ public class QLMT extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         Card2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -252,6 +253,9 @@ public class QLMT extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/IF6.png"))); // NOI18N
         Card1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Del.png"))); // NOI18N
+        Card1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, 80));
+
         Cards.add(Card1, "card3");
 
         jLabel3.setText("Helo");
@@ -349,6 +353,7 @@ public class QLMT extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
