@@ -229,7 +229,7 @@ public class QLMT extends javax.swing.JFrame {
                 .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnTietKiem)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Card1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 250, 260));
@@ -379,6 +379,7 @@ public class QLMT extends javax.swing.JFrame {
 
 void DataToTable(){
         try {
+            ThemMucTieu tmt=new ThemMucTieu();
             DefaultTableModel bang= (DefaultTableModel) tblList.getModel();
             Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true","","");
             Statement st = con.createStatement();
@@ -389,10 +390,13 @@ void DataToTable(){
                 JOptionPane.showMessageDialog(this,"Chưa có mt");
             }
             while (rs.next()) {
+                double sttk=Math.round(Double.parseDouble(rs.getString("giatri"))/tmt.ham());
                 Vector vt= new Vector();
                 vt.add(rs.getString("tenmuctieu"));
                 vt.add(rs.getString("giatri"));
                 vt.add(rs.getString("thoihan"));
+                vt.add(rs.getString("sotiendatietkiemduoc"));
+                vt.add(sttk);
                 bang.addRow(vt);
             }
             tblList.setModel(bang);

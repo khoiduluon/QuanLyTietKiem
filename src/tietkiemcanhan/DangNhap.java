@@ -47,7 +47,7 @@ public class DangNhap extends javax.swing.JFrame {
         lblPopup = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        lblDangKy = new javax.swing.JLabel();
+        lblDangNhap = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,13 +95,13 @@ public class DangNhap extends javax.swing.JFrame {
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 210, 20));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 210, 40));
 
-        lblDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 4.png"))); // NOI18N
-        lblDangKy.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 4.png"))); // NOI18N
+        lblDangNhap.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblDangKyMouseClicked(evt);
+                lblDangNhapMouseClicked(evt);
             }
         });
-        jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
+        jPanel1.add(lblDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 450, -1));
@@ -123,16 +123,16 @@ public class DangNhap extends javax.swing.JFrame {
        dk.setVisible(true);
     }//GEN-LAST:event_lblPopupMouseClicked
 
-    private void lblDangKyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangKyMouseClicked
+    private void lblDangNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangNhapMouseClicked
         if(txtUserName.getText().equalsIgnoreCase("abc") && txtPassWord.getText().equalsIgnoreCase("123")){
             JOptionPane.showMessageDialog(this, "Đăng nhập thành công");
             QLMT ql= new QLMT();
             ql.setVisible(true);
-            dispose();;
+            dispose();
         }else{
             checkDangnhap();
         }
-    }//GEN-LAST:event_lblDangKyMouseClicked
+    }//GEN-LAST:event_lblDangNhapMouseClicked
 
     /**
      * @param args the command line arguments
@@ -178,7 +178,7 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblCancel;
-    private javax.swing.JLabel lblDangKy;
+    private javax.swing.JLabel lblDangNhap;
     private javax.swing.JLabel lblPopup;
     private javax.swing.JPasswordField txtPassWord;
     private javax.swing.JTextField txtUserName;
