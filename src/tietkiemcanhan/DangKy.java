@@ -85,7 +85,7 @@ public class DangKy extends javax.swing.JFrame {
                 lblDangKyMouseClicked(evt);
             }
         });
-        jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+        jPanel1.add(lblDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, -1, -1));
 
         lblCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 5.png"))); // NOI18N
         lblCancel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -93,7 +93,7 @@ public class DangKy extends javax.swing.JFrame {
                 lblCancelMouseClicked(evt);
             }
         });
-        jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
+        jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, -1, -1));
 
         txtPassWord.setBorder(null);
         txtPassWord.setOpaque(false);
@@ -157,8 +157,9 @@ public class DangKy extends javax.swing.JFrame {
         jLabel9.setText("Phone Number:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("Đăng ký");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 90, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 100, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 460, -1));

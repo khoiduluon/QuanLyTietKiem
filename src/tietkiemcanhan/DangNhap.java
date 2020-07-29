@@ -39,6 +39,7 @@ public class DangNhap extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnExit = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblCancel = new javax.swing.JLabel();
@@ -60,9 +61,19 @@ public class DangNhap extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnExit.setBackground(new java.awt.Color(204, 255, 204));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Exit.png"))); // NOI18N
+        btnExit.setBorder(null);
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 40, 30));
+
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         jLabel5.setText("UserName:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
         jLabel6.setText("PassWord:");
@@ -74,7 +85,7 @@ public class DangNhap extends javax.swing.JFrame {
                 lblCancelMouseClicked(evt);
             }
         });
-        jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 490, -1, -1));
+        jPanel1.add(lblCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, -1, 70));
 
         txtUserName.setBorder(null);
         txtUserName.setOpaque(false);
@@ -101,7 +112,7 @@ public class DangNhap extends javax.swing.JFrame {
                 lblDangNhapMouseClicked(evt);
             }
         });
-        jPanel1.add(lblDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
+        jPanel1.add(lblDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 450, -1));
@@ -133,6 +144,10 @@ public class DangNhap extends javax.swing.JFrame {
             checkDangnhap();
         }
     }//GEN-LAST:event_lblDangNhapMouseClicked
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +185,7 @@ public class DangNhap extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
