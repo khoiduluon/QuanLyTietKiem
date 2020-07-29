@@ -6,6 +6,9 @@
 package tietkiemcanhan;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +16,9 @@ import javax.swing.JOptionPane;
  * @author 0ldbl
  */
 public class DangKy extends javax.swing.JFrame {
-
+    String username="sa";
+    String password="";
+    String url="jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true";
     /**
      * Creates new form DangKy
      */
@@ -53,7 +58,6 @@ public class DangKy extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         txtEmail = new javax.swing.JTextField();
-        txtConfirm = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
@@ -66,6 +70,7 @@ public class DangKy extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txtConfirm = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,10 +120,6 @@ public class DangKy extends javax.swing.JFrame {
         txtEmail.setOpaque(false);
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 240, 30));
 
-        txtConfirm.setBorder(null);
-        txtConfirm.setOpaque(false);
-        jPanel1.add(txtConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 240, 30));
-
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
         jLabel8.setText("Email:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
@@ -161,6 +162,9 @@ public class DangKy extends javax.swing.JFrame {
         jLabel3.setText("Đăng ký");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 100, 40));
 
+        txtConfirm.setBorder(null);
+        jPanel1.add(txtConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 212, 240, 30));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/Artboard – 2.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 460, -1));
 
@@ -171,7 +175,9 @@ public class DangKy extends javax.swing.JFrame {
 
     private void lblDangKyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangKyMouseClicked
         // TODO add your handling code here:
-        KT();
+        if(KT()==true){
+            Filldatabase();
+        }
     }//GEN-LAST:event_lblDangKyMouseClicked
 
     private void lblCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelMouseClicked
@@ -236,7 +242,7 @@ public class DangKy extends javax.swing.JFrame {
     private javax.swing.JLabel lblDangKy;
     private javax.swing.JRadioButton rdoFemale;
     private javax.swing.JRadioButton rdoMale;
-    private javax.swing.JTextField txtConfirm;
+    private javax.swing.JPasswordField txtConfirm;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFullName;
     private javax.swing.JPasswordField txtPassWord;
@@ -289,5 +295,42 @@ public class DangKy extends javax.swing.JFrame {
             return false;
         }
         return true;
-    }  
+    }
+    void Filldatabase(){
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con =DriverManager.getConnection(url,username,password);
+            String sql="insert into thongtinnguoidung values(?,?,?,?,?,?)";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1,txtUserName.getText());
+            st.setString(2,txtPassWord.getText());
+            st.setString(3,txtFullName.getText());
+            String gt;
+            if(rdoMale.isSelected()){
+                gt="0";
+            }else{
+                gt="1";
+            }
+            st.setString(4,gt.toString());
+            st.setString(5,txtEmail.getText());
+            st.setString(6,txtPhone.getText());
+            st.execute();
+            con.close();
+            st.close();
+            JOptionPane.showMessageDialog(this,"Đăng kí thành công!");
+            New();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    }
+    void New(){
+        txtUserName.setText("");
+        txtPassWord.setText("");
+        txtConfirm.setText("");
+        txtFullName.setText("");
+        txtEmail.setText("");
+        txtPhone.setText("");
+        buttonGroup1.clearSelection();
+        txtUserName.requestFocus();
+    }
 }
