@@ -26,7 +26,6 @@ public class QLMT extends javax.swing.JFrame {
     public QLMT() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
         cardLayout = (CardLayout) Cards.getLayout();
         DataToTable();
     }
@@ -193,19 +192,14 @@ public class QLMT extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtTienTk)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel9)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtTienTk))
+                    .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -230,6 +224,12 @@ public class QLMT extends javax.swing.JFrame {
         );
 
         Card1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, 270));
+
+        txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimKiemActionPerformed(evt);
+            }
+        });
         Card1.add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 130, -1));
 
         lblTienDo.setText("99%");
@@ -239,6 +239,11 @@ public class QLMT extends javax.swing.JFrame {
         Card1.add(lblTktheongay, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         lblTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tietkiemcanhan/Button/find_and_replace_32px.png"))); // NOI18N
+        lblTimKiem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTimKiemMouseClicked(evt);
+            }
+        });
         Card1.add(lblTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
 
         lblThoihan.setText("3 thang");
@@ -320,6 +325,15 @@ public class QLMT extends javax.swing.JFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         cardLayout.show(Cards, "card3");
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTimKiemActionPerformed
+
+    private void lblTimKiemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTimKiemMouseClicked
+        // TODO add your handling code here:
+        timkiem();
+    }//GEN-LAST:event_lblTimKiemMouseClicked
 
     /**
      * @param args the command line arguments
@@ -444,5 +458,20 @@ void xoaMT(){
         }catch (Exception ex) {
             JOptionPane.showMessageDialog(this,ex);
         }
+}
+void timkiem(){
+        try {
+            Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true","sa","");
+            PreparedStatement st=con.prepareStatement("select tenmuctieu,giatri,thoihan,sotiendatietkiemduoc from muctieutietkiem where tenmuctieu like'%"+txtTimKiem.getText()+"%'");
+            ResultSet rs=st.executeQuery();
+            while(rs.next()){
+                lblTenMucTieu.setText(rs.getString("tenmuctieu"));
+                lblThoihan.setText(rs.getString("thoihan"));
+                lblTienDaTK.setText(rs.getString("sotiendatietkiemduoc"));
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    
 }
 }
