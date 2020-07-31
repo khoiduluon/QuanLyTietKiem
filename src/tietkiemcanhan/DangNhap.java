@@ -6,6 +6,13 @@
 package tietkiemcanhan;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -135,13 +142,8 @@ public class DangNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_lblPopupMouseClicked
 
     private void lblDangNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangNhapMouseClicked
-        if(txtUserName.getText().equalsIgnoreCase("abc") && txtPassWord.getText().equalsIgnoreCase("123")){
-            JOptionPane.showMessageDialog(this, "Đăng nhập thành công");
-            QLMT ql= new QLMT();
-            ql.setVisible(true);
-            dispose();
-        }else{
-            checkDangnhap();
+        if(checkDangnhap()==true){
+            Login();
         }
     }//GEN-LAST:event_lblDangNhapMouseClicked
 
@@ -199,7 +201,7 @@ public class DangNhap extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassWord;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
-    boolean checkDangnhap() {
+    boolean checkDangnhap() { 
         if (txtUserName.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "mời bạn nhập Username", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             txtUserName.requestFocus();
@@ -210,11 +212,28 @@ public class DangNhap extends javax.swing.JFrame {
             txtPassWord.requestFocus();
             return false;
         }
-        if (txtUserName.getText() != txtPassWord.getText()) {
-            JOptionPane.showMessageDialog(this, "Bạn nhâp sai tk/mk, mời nhập lại", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-            return false;
-        }
             return true;
+    }
+    void Login(){
+        try {
+            Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=QLTK;integratedSecurity=true","sa","");
+            Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery("select idND,password from thongtinnguoidung");
+            while(rs.next()){
+               if(txtUserName.getText().equals(rs.getString("idND"))&&(txtPassWord.getText().equals(rs.getString("password")))){
+                JOptionPane.showMessageDialog(this,"Đăng nhập thành công");
+                QLMT ql= new QLMT();
+                ql.setVisible(true);
+            }else{
+                   JOptionPane.showMessageDialog(this,"Đăng nhập thất bại!\nSai tài khoản hoặc mật khẩu!");
+               }
+            }
+            con.close();
+            st.close();
+            rs.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this,ex);
+        }
     }
 }
 
